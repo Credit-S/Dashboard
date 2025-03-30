@@ -3,191 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .user-info {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        .user-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .user-info h5,
-        .user-info p {
-            margin: 0;
-        }
-
-        .sidebar {
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
-            background: linear-gradient(to bottom, #316EFA, #0547B2);
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-            color: white;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .sidebar img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .sidebar .user-info {
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .sidebar .user-info h5,
-        .sidebar .user-info p {
-            margin: 0;
-        }
-
-        .sidebar .nav-link {
-            margin-top: 15px;
-            font-size: 15px;
-            color: #0866FF;
-            background-color: white;
-            border: 1px solid transparent;
-            border-radius: 5px;
-            padding: 10px 15px;
-            text-align: center;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .sidebar .nav-link:hover {
-            background-color: #428AFF;
-            color: white;
-            border: 1px solid white;
-        }
-
-        .sidebar .sign-out {
-            margin-top: auto;
-            padding: 15px;
-        }
-
-        .btn-signout {
-            background-color: white;
-            color: #0866FF;
-            border: 1px solid transparent;
-            width: 100%;
-            border-radius: 5px;
-            padding: 10px 15px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-signout:hover {
-            background-color: #428AFF;
-            color: white;
-            border: 1px solid white;
-        }
-
-        .content {
-            margin-left: 300px;
-            padding: 20px;
-        }
-
-        /* Header styles */
-        .header {
-            background-color: #316EFA;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-    </style>
+    <title>Internship Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-
-    <div class="sidebar">
-        <!-- User info -->
-        <div class="d-flex align-items-center user-info">
-            <img src="/img/monkey.jpg" alt="User Image" class="user-image">
-            <div class="ms-3">
-                <h5>John Doe</h5>
-                <p>BSIT</p>
-            </div>
-        </div>
-
-        <!-- Sidebar links -->
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">DASHBOARD</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PROFILE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">LOGBOOK</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">WEEKLY REFLECTION</a>
-            </li>
-        </ul>
-
-        <!-- Sign out button -->
-        <div class="sign-out">
-            <button class="btn btn-signout" id="signOutBtn">SIGN OUT</button>
-        </div>
-    </div>
-
-    <!-- Content Area -->
-    <div class="content">
-        <!-- Header Section -->
-        <div class="header">
-            <h1>Welcome to your Dashboard</h1>
-        </div>
-        <p>This area is empty for now. You can add content here later.</p>
-    </div>
-
-    <!-- Sign Out Modal -->
-    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signOutModalLabel">Sign Out Confirmation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to sign out?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Sign Out</button>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="/img/monkey.jpg" alt="Profile Picture">
+                <div class="profile-text">
+                    <h3 data-fullname="Abe Karev Goodwyn T. Pinera">Abe Karev Goodwyn T. Pinera</h3>
+                    <p>BSIT</p>
                 </div>
             </div>
-        </div>
+           
+            <nav>
+                <button class="nav-button active"><i class="bi bi-grid"></i><span>DASHBOARD</span></button>
+                <button class="nav-button"><i class="bi bi-person-circle"></i><span>PROFILE</span></button>
+<button class="nav-button"><i class="bi bi-book"></i><span>LOG BOOK</span></button>
+<button class="nav-button"><i class="bi bi-calendar2-week"></i><span>WEEKLY REFLECTION</span></button>
+
+            </nav>
+            <button class="signout-button"><i class="bi bi-box-arrow-in-right"></i><span>SIGN OUT</span></button>
+        </aside>
+
+        <!-- Dashboard Content -->
+        <main class="dashboard-content">
+            <section class="welcome">
+                <div class="welcome-content">
+                    <img src="/img/LOGO.png" alt="DICT Logo">
+                    <div>
+                        <h1>Welcome to the DICT,</h1>
+                        <h2>Abe Karev Goodwyn T. Pinera</h2>
+                        <p>Stay on track with your internship progress, log your activities, and manage your status efficiently. Your journey in the tech industry starts here!</p>
+                    </div>
+                </div>
+                <div class="hours-complete">
+                    <p>Hours Complete</p>
+                    <h1>420 Hours</h1>
+                </div>
+            </section>
+
+            <!-- Time Tracker and Non-compliance -->
+            <div class="content-row">
+                <!-- Time Tracker -->
+                <section class="time-tracker">
+                    <h2>Time Tracker</h2>
+                    <div class="tracker-list">
+                        <div class="tracker-card">
+                            <p><strong>Date:</strong> January 4, 2025</p>
+                            <p><strong>Time In:</strong> 8:00 AM</p>
+                            <p><strong>Time Out:</strong> 5:10 PM</p>
+                            <p><strong>Hours Complete:</strong> 8 Hours</p>
+                        </div>
+                        <div class="tracker-card">
+                            <p><strong>Date:</strong> January 3, 2025</p>
+                            <p><strong>Time In:</strong> 8:00 AM</p>
+                            <p><strong>Time Out:</strong> 5:10 PM</p>
+                            <p><strong>Hours Complete:</strong> 8 Hours</p>
+                        </div>
+                        <div class="tracker-card">
+                            <p><strong>Date:</strong> January 2, 2025</p>
+                            <p><strong>Time In:</strong> 8:00 AM</p>
+                            <p><strong>Time Out:</strong> 5:10 PM</p>
+                            <p><strong>Hours Complete:</strong> 8 Hours</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Non-compliance -->
+                <section class="non-compliance">
+                    <h2>Non-compliance</h2>
+                    <div class="non-compliance-list">
+                        <div class="non-compliance-card">
+                            <p>Walay Medical</p>
+                        </div>
+                        <div class="non-compliance-card">
+                            <p>Late Submission</p>
+                        </div>
+                        <div class="non-compliance-card">
+                            <p>Incomplete Logs</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-    <!-- JavaScript to show the modal -->
-    <script>
-        document.getElementById('signOutBtn').addEventListener('click', function() {
-            var myModal = new bootstrap.Modal(document.getElementById('signOutModal'));
-            myModal.show();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
